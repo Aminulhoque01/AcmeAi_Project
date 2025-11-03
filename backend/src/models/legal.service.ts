@@ -1,3 +1,4 @@
+import { error } from "console";
 import { LegalModel } from "./legal.model";
 
 export const searchLegalDocs = async (query: string) => {
@@ -29,3 +30,13 @@ export const searchLegalDocs = async (query: string) => {
 
   return results;
 };
+
+
+export const searchLegalDocsId=(id:string)=>{
+  const doc = LegalModel.findById(id);
+    if(!doc){
+      throw error("dock not found");
+    }
+   return doc
+    
+}

@@ -24,7 +24,7 @@ app.get("/health", (_req, res) => {
 
 app.use(errorHandler);
 
-app.use("/api/v1", legalRoutes);
+app.use("/api/v1/generate", legalRoutes);
 
 // MongoDB connection
 const connectDB = async () => {

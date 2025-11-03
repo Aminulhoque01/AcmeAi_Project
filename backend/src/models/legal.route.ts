@@ -1,11 +1,12 @@
 
 import { Router } from "express";
-import { getGeneratedSummary } from "./legal.controller";
+import { getDetailsSummery, getGeneratedSummary } from "./legal.controller";
  
  
 
 const router = Router();
 
-router.post("/generate", getGeneratedSummary);
+router.get("/search", getGeneratedSummary);
+router.get("/:id", getDetailsSummery);
 
 export default router;

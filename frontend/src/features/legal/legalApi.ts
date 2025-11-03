@@ -11,6 +11,10 @@ export const legalApi = createApi({
         url: `/search?query=${query}`,
         method: "GET",
       }),
+      
+    }),
+    getLegalDocById: builder.query({
+      query: (id: string) => `/generate/${id}`,
     }),
   }),
 });
