@@ -4,6 +4,8 @@ import mongoose from "mongoose";
 import * as dotenv from "dotenv";
 import morgan from "morgan";
 import errorHandler from "./utils/errorHandler";
+import legalRoutes from "./models/legal.route";
+
 
 dotenv.config();
 
@@ -21,6 +23,8 @@ app.get("/health", (_req, res) => {
 });
 
 app.use(errorHandler);
+
+app.use("/api/v1", legalRoutes);
 
 // MongoDB connection
 const connectDB = async () => {
